@@ -194,7 +194,7 @@ object List { // `List` companion object. Contains functions for creating and wo
   performed by `foldRight`.
   */
   def appendViaFoldRight[A](l: List[A], r: List[A]): List[A] =
-    foldRight(l, r)(Cons(_,_))
+    foldRight(l, r)((x, y) => Cons(x,y))
 
   /*
   Since `append` takes time proportional to its first argument, and this first argument never grows because of the
